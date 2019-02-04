@@ -1,0 +1,123 @@
+body {
+	background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png) repeat;
+	font-size: 100%;
+}
+
+.top-wrapper {
+	max-width: 1860px;
+	min-width: 440px;
+	margin: 0 auto;	
+	font-size: 1rem;	/**will change all dimensions on media**/
+	padding: 3em 1em;
+}
+
+.top-wrapper h1 {
+	font-size: 1.3em;
+	text-align: center;
+	margin-bottom: 1em;
+	color: rgba(0,0,0,.8);
+}
+
+.student-card {
+	font-size: 1em;
+	color: rgba(0,0,0,.8);
+	width: 33em;
+	padding: 1.5em;
+	margin: 0 auto;
+	background: rgba(255, 255, 255, 1);
+	color: rgba(0,0,0,.8);
+	box-shadow: .3em .3em 1em rgba(0,0,0,.6);
+}
+
+.logo-wrapper {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
+
+.flex-box__item {
+	width: 48%;
+}
+
+.person-photo {
+	display: inline-block;
+	width: 10em;
+}
+
+.contact-block {
+	margin-top: 2em;
+}
+
+.contact-block > div {
+	display: inline-block;
+}
+
+.contact-block > div:first-of-type {
+	margin-right: .5em;
+}
+
+.contact-block > div > span {
+	display: block;
+}
+
+.contact-block span[data-type="email"] {
+	font-size: .75em;
+}
+
+.contact-block.left-border {
+	padding-left: .7em;
+	border-left: .05em solid rgba(0,0,0,.7);
+}
+
+.person-block {
+	margin-bottom: 3.5em;
+}
+
+.person-block span {
+	display: block;
+}
+
+.person-block span:not([data-type="group"]) {
+	font-weight: bold;
+}
+
+.person-block > span[data-type="person"] {
+	font-size: 1.6em;
+}
+
+.person-block > span[data-type="position"] {
+	font-size: 1.2em;
+}
+
+.person-block > span[data-type="group"] {
+	font-size: 1em;
+}
+
+
+/************OPTION***************/
+.rel {
+	position: relative;
+}
+
+.flex-box {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-box.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box.around {
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-box.between {
+	justify-content: space-between;
+}
+
+.flex-box.end {
+	align-items: flex-end;
+}

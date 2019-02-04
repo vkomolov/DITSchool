@@ -1,0 +1,41 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png) repeat;
+  font-size: 100%;
+}
+/*************TOP BORDER BODY****************/
+body:before {
+  content: "";
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0,0,0,.8);
+}
+/*****************END TOP BORDER BODY************/
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  transition: all ease .2s;
+}
+
+#root {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 1280px;
+  min-width: 500px;
+  margin: 2em auto;
+  padding: 2em;
+}
+
+

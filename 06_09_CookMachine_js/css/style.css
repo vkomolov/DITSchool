@@ -1,0 +1,197 @@
+* {
+	transition: all ease .4s;
+}
+
+body {    
+	/*margin: 0;*/ /*reset.css is plugged*/	
+}
+/*************TOP BORDER BODY****************/
+body:before {
+	content: "";
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	z-index: 100;
+	box-shadow: 0 0 10px rgba(0,0,0,.8);
+}
+/*****************END TOP BORDER BODY************/
+/*box-sizing: border-box;*/ /*plugged in reset.css*/
+
+a {
+	display: inline-block; /*restricts width and gives ability to be operated as block el*/
+}
+
+.top-wrapper {
+	font-size: 1rem;
+	width: 100%;
+	max-width: 1280px;
+	min-width: 440px;
+	margin: 0 auto;
+	padding: 2em 0;
+	background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png);
+}
+
+header {
+	margin-bottom: 2em;
+}
+
+header h1 {
+	text-align: center;
+}
+
+#cooker {
+	position: relative;
+	font-size: 1em;
+	width: 45em;
+	padding: 2em;
+	margin: 0 auto;
+	border-radius: 0.5em;
+	background: linear-gradient(45deg, rgba(180, 14, 220, .8) 15%, rgba(7, 19, 62, .8) 45%);
+	box-shadow: 5px 5px 5px rgba(0,0,0,.8), inset 5px 5px 5px rgba(255,255,255,0.8),
+				inset -5px -5px 5px rgba(0,0,0,.6);
+}
+
+#cooker .heading {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    text-align: center;
+	color: rgba(66,11,92,1);
+	text-shadow: 1px 1px rgba(45,11,70,1), 2px 2px rgba(45,11,70,1), 3px 3px rgba(45,11,70,1),
+	4px 4px rgba(45,11,70,1), 5px 5px rgba(45,11,70,1),
+	8px 8px 30px rgba(0, 0, 0, .5), 8px 8px 10px rgba(0, 0, 0, .8);
+}
+
+#cooker > .heading.light-on {
+	color: rgba(206, 102, 250, 1);
+	text-shadow: 1px 1px rgba(230,160,230,1), 2px 2px rgba(230,160,230,1), 3px 3px rgba(230,160,230,1),
+	4px 4px rgba(230,160,230,1), 5px 5px rgba(230,160,230,1),
+	8px 8px 30px rgba(190,150,250,1), 8px 8px 10px rgba(190,150,250,1);
+}
+
+.cooker-screen {
+	width: 95%;
+	height: 11em;
+	padding: 1em;
+	margin: 3em auto;
+	border-radius: 1em;
+	background-color: rgba(0, 0, 0, 1);
+	box-shadow: inset -.1em -.1em 1em rgba(0, 0, 0, .9),
+				inset .1em .1em 1em rgba(0, 0, 0, .9);
+	font-weight: bold;
+	color: rgba(0, 0, 0, .8);
+}
+
+.cooker-screen.light-on {		/*PLUGGED IN cook.js*/
+	background: rgb(195, 240, 190);
+}
+
+.message {
+	display: block;
+    font-size: 1.2em;
+	padding: .5em;
+}
+
+.message_main {
+	font-size: 2em;
+	text-align: center;
+	letter-spacing: .1em;
+}
+
+.message_detail {
+	flex-basis: 50%;
+    margin-top: 1em;
+}
+
+.message_detail > span {
+	padding-left: .5em;
+	background-color: lightblue;
+}
+
+.buttonBlock {
+	text-align: center;
+}
+
+.button {
+	display: inline-block;
+	width: 7em;
+	/*height: 7em;*/ /*line-height controls height*/
+	text-align: center;
+	line-height: 5em;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: .5em;
+	margin: 1.3em;
+	box-shadow: 0.35em 0.35em 7px rgba(0,0,0,.9),
+	inset .075em .075em 3px rgba(255,255,255,0.8),
+	inset -.2em -.2em 5px rgba(45,11,70,.7);
+	/*color: rgba(230,160,230,1);*/
+	background-color: rgba(45,11,70,1);
+	transition: all .15s ease-in-out;
+}
+
+.button:hover {
+	box-shadow: 0.45em 0.45em 7px rgba(0,0,0,.9),
+	inset .075em .075em 3px rgba(255,255,255,0.8),
+	inset -.2em -.2em 5px rgba(45,11,70,1);
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.button:active {
+	box-shadow: 0.35em 0.35em 7px rgba(0,0,0,.9),
+	inset .075em .075em 3px rgba(255,255,255,0.8),
+	inset -.2em -.2em 5px rgba(45,11,70,.7);
+	cursor: pointer;
+	transform: scale(1);
+}
+
+.button.light-on.selected {
+	background-color: rgba(190,150,250,1);
+	color: rgba(0,0,0,.9);
+}
+
+.button.light-on {
+	color: rgba(230,160,230,1);
+	background-color: rgba(105,25,120,1);
+}
+
+
+.button_switch {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 3em;
+	height: 3em;
+	line-height: 3em;
+}
+
+.button_submit {
+	width: 10em;
+	line-height: 4em;
+	margin-top: 3em;
+	border-radius: .5em;
+}
+
+/**********************OPTION**************************/
+.flex-box {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.flex-box.center {
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-box.around {
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-box.between {
+	justify-content: space-between;
+}

@@ -1,0 +1,30 @@
+.todo-plate {
+    position: absolute;
+    top: 110%;
+    left: -30%;
+    display: inline-block;
+    width: 750px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0.3em 0.3em .5em rgba(0,0,0,.8);
+}
+.todo-plate .input-wrapper {
+    margin: 20px auto;
+}
+
+.input-wrapper  input {
+    font-size: 1rem;
+    width: 480px;
+    padding: 4px 5px;
+    border: none;
+    border-top: 3px solid rgb(76, 182, 232);
+    border-bottom: 3px solid rgb(76, 182, 232);
+}
+
+.button.button_submit {
+    border-color: rgb(76, 182, 232);
+    color: rgb(76, 182, 232);
+    margin: 0 10px;
+}
