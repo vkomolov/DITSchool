@@ -1,0 +1,26 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+///@import "../../utils/global_styles/fonts";
+
+.totalWrapper {
+  position: relative; //for loading icon
+  flex-grow: 1;
+  flex-basis: 400px;
+  color: $blue;
+  padding: 5px 25px;
+  padding-right: 0;
+  opacity: 0;
+  animation: fadeIn .8s ease forwards;
+
+  h2 {
+    letter-spacing: 2px;
+    //border-top: 1px solid $blueDark;
+    //border-bottom: 1px solid $blueDark;
+    background: linear-gradient(90deg, $white, $foxy);
+    @include text-shadow(1px, 2px);
+    @include init-font(28px, 700);
+    line-height: 65px;
+  }
+
+}

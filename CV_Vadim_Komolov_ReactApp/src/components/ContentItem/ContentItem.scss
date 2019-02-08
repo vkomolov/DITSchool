@@ -1,0 +1,40 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+///@import "../../utils/global_styles/fonts";
+
+.topWrapper {
+  @include flex-box($flex-box-row-left...);
+
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  margin: 20px auto;
+
+
+  .remarkCol {
+    width: 90px;
+
+    .remark {
+      display: block;
+    }
+  }
+
+  .contentWrapper {
+    flex-basis: 80%;
+    flex-grow: 1;
+    padding-left: 20px;
+    @include init-font(20px, 400);
+  }
+
+  p {
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style: disc inside;
+
+    li {
+      margin: 5px auto;
+    }
+  }
+}

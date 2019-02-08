@@ -1,0 +1,341 @@
+{
+  "fullName": "Vadim Komolov",
+  "photo": "../img/vk.png",
+  "personal": {
+    "aside": {
+      "details": [
+        {
+          "title": "Citizenship",
+          "details": "Kyiv Ukraine"
+        },
+        {
+          "title": "Phone",
+          "details": "+(380) 66 350-61-04"
+        },
+        {
+          "title": "Email",
+          "details": "vkomolov1974@gmail.com"
+        },
+        {
+          "title": "Linkedin",
+          "details": "Vadim Komolov"
+        }
+      ],
+      "skills": [
+        {
+          "title": "Languages",
+          "details": [
+            {
+              "title": "Russian",
+              "details": "100"
+            },
+            {
+              "title": "Ukrainian",
+              "details": "85"
+            },
+            {
+              "title": "English",
+              "details": "85"
+            }
+          ]
+        },
+        {
+          "title": "Soft Skills",
+          "details": [
+            {
+              "title": "Leadership",
+              "details": "75"
+            },
+            {
+              "title": "Collaboration",
+              "details": "80"
+            }
+          ]
+        }
+      ]
+    },
+    "content": {
+      "title": "Covering Letter",
+      "details": [
+        {
+          "remark": null,
+          "subheading": null,
+          "p": [
+            "Dear Sirs,",
+            "I have successfully worked in the field of B2B sales for more than 20 years: from a sales manager of the industrial and high-tech products to the sales director for the international production company.",
+            "Gaining a wealth of knowledge and skills in managing sales, I decided to combine them with my hobby in WEB programming.",
+            "As a rule, a web developer has an engineering, procedural mindset that does not always keep up with the mindset of the Seller. The Seller is on a constant search for the possible advantages of the product and services to be sold.",
+            "Just the Client oriented view to the product concept and the programming skills can produce a very perspective symbiosis.",
+            "Many apps suffer not only adaptability to devices, but also their imbalance in programming, using 'big' for the 'little' or just not fully relevent to the task and possible Customer Priorities",
+            "In addition, the growing trend in use of different constructors, libraries simplify the web production, but also can restrain freedom and creativity at the same time.",
+            "I learn to feel the balance in usage of the front and back methods when creating an application with a specific purpose and functionality.",
+            "I enjoy and strive for an easy, scalable and maximum adaptive, semantic DRY code, not overloaded with many libraries for a couple of easy methods.",
+            "I am certainly convinced, that my professional background in management of sales and marketing processes will meet my lively interest in web programming and generate a productive, significant outcome for the Company I will work for.",
+            "With Respect,",
+            "Vadim Komolov"
+          ]
+        }
+      ]
+    }
+  },
+  "experience": {
+    "aside": {
+      "details": [
+        {
+          "title": "Achievements",
+          "details": "3M International Sales & Marketing Professional Award. Team & Department Awards on exceptional sales results"
+        }
+      ],
+      "skills": [
+        {
+          "title": "Sales",
+          "details": [
+            {
+              "title": "Customer Focus Selling",
+              "details": "85"
+            },
+            {
+              "title": "Sales Presentation",
+              "details": "85"
+            },
+            {
+              "title": "Negotiation",
+              "details": "80"
+            }
+          ]
+        },
+        {
+          "title": "Sales Management",
+          "details": [
+            {
+              "title": "Business Analysis",
+              "details": "90"
+            },
+            {
+              "title": "Sales Team Leading",
+              "details": "80"
+            },
+            {
+              "title": "Distribution management",
+              "details": "85"
+            }
+          ]
+        },
+        {
+          "title": "Marketing Management",
+          "details": [
+            {
+              "title": "Positioning and Penetration",
+              "details": "80"
+            },
+            {
+              "title": "Product Strategy",
+              "details": "80"
+            },
+            {
+              "title": "Marketing Analysis",
+              "details": "90"
+            }
+          ]
+        }
+      ]
+    },
+    "content": {
+      "title": "Experience",
+      "details": [
+        {
+          "remark": "Apr 2015 – till present",
+          "subheading": "Ancon Trade",
+          "li": [
+            "Analysis and monitoring of the crushed stone market in UA and BY",
+            "Distribution channels development. Pricing and Assortment Management."
+          ]
+        },
+        {
+          "remark": "Apr 2014 – Apr 2015",
+          "subheading": "Basalt-Actien-Gesellschaft",
+          "li": [
+            "Sales development in Ukraine, Russia, Belarus, Baltic States, Poland",
+            "Analysis & monitoring of the markets, identification of the target segments and the market entry strategies.",
+            "Prioritization and development of the distribution channels, realization of the pricing and distribution policies.",
+            "Planning of the sales and marketing activities",
+            "Initiation of the customer base CRM",
+            "Sales activity, negotiations, presentation and active trips"
+          ]
+        },
+        {
+          "remark": "Apr 2013 – Feb 2014",
+          "subheading": "Industrial Group 'Filter'",
+          "li": [
+            "Identifying the target market segments, working on the market entry strategy",
+            "Brand Positioning, Sales and Marketing planning",
+            "Development of the Distribution channels",
+            "Product assortment management, Price and Discount Policy",
+            "Sales activity, negotiations, presentations to the potential Traders"
+          ]
+        },
+        {
+          "remark": "May 2004 – Aug 2012",
+          "subheading": "3M Ukraine",
+          "li": [
+            "Prioritizing and development of the Key Customers in the target segments.",
+            "Strengthening the presence by the specialized Distributors and the second level Traders.",
+            "Analysis and development of the Product Channels. Initiating the Separate Product Group Policy",
+            "Direct work with the Final Customers in/without cooperation with the Traders.",
+            "Customers` “cases” analysis and presenting the product solutions. Leading Presentations, specialized OH&ES lectures, instructions to the potential Accounts.",
+            "Leading trainings and lectures for the sales force of the Traders."
+          ]
+        },
+        {
+          "remark": "Sep 1997 – May 2004",
+          "subheading": "Ukrtekstyl",
+          "li": [
+            "Leading sales on the following trademarks: Ansell Edmont Industrial, JSP, Howard, Dupont, Ozon, Bacou Intersafe, MSA",
+            "Leading projects on agricultural, energy and construction materials with the following co-supply of the safety products to the Accounts",
+            "Product trainings to the sales stuff, coordination of the Sales Force",
+            "Direct sales to the Final Customers of the industrial market. Sales leader",
+            "Development of the Distribution Channel"
+          ]
+        }
+      ]
+    }
+  },
+  "education": {
+    "aside": {
+      "details": [
+        {
+          "title": "CFS",
+          "details": "Corporate Courses"
+        },
+        {
+          "title": "Lean Six Sigma",
+          "details": "Corporate Courses"
+        },
+        {
+          "title": "Presentation",
+          "details": "Corporate Courses"
+        },
+        {
+          "title": "Negotiation",
+          "details": "Corporate Courses"
+        },
+        {
+          "title": "Time Management",
+          "details": "Corporate Courses"
+        },
+        {
+          "title": "ISO 9000",
+          "details": "Corporate Courses"
+        }
+      ],
+      "skills": [
+        {
+          "title": "Programming",
+          "details": [
+            {
+              "title": "HTML",
+              "details": "85"
+            },
+            {
+              "title": "CSS",
+              "details": "85"
+            },
+            {
+              "title": "SCSS",
+              "details": "85"
+            },
+            {
+              "title": "Javascript",
+              "details": "80"
+            },
+            {
+              "title": "ES-2015",
+              "details": "80"
+            },
+            {
+              "title": "Gulp",
+              "details": "50"
+            },
+            {
+              "title": "PHP",
+              "details": "30"
+            },
+            {
+              "title": "SQL",
+              "details": "70"
+            }
+          ]
+        },
+        {
+          "title": "Frameworks, Libraries",
+          "details": [
+            {
+              "title": "jQuery",
+              "details": "30"
+            },
+            {
+              "title": "Bootstrap",
+              "details": "30"
+            },
+            {
+              "title": "React",
+              "details": "75"
+            },
+            {
+              "title": "React Redux",
+              "details": "75"
+            }
+          ]
+        },
+        {
+          "title": "IDE, API",
+          "details": [
+            {
+              "title": "XAMPP",
+              "details": "60"
+            },
+            {
+              "title": "PHP Storm",
+              "details": "80"
+            },
+            {
+              "title": "GIT",
+              "details": "65"
+            },
+            {
+              "title": "Enzyme",
+              "details": "50"
+            }
+          ]
+        }
+      ]
+    },
+    "content": {
+      "title": "Education",
+      "details": [
+        {
+          "remark": "Nov 2017 - till present",
+          "subheading": "Deutsche-It-Schule",
+          "li": [
+            "Web Development FullStack"
+          ]
+        },
+        {
+          "remark": "Sep 2017 - Oct 2017",
+          "subheading": "Institute of Information and Business Technologies",
+          "li": [
+            "Front-End Web Development"
+          ]
+        },
+        {
+          "remark": "Sep 1992 - June 1995",
+          "subheading": "International Institute of Business, Management and Law",
+          "li": [
+            "Management",
+            "Bachelor Degree with excellence"
+          ]
+        }
+      ]
+    }
+  }
+}
