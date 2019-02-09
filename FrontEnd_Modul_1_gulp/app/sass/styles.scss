@@ -1,0 +1,695 @@
+@import "reset";
+@import "fonts";
+@import "animation";
+
+///VARIABLES
+$top-width: 1000px;
+
+$pink-color:  rgba(151, 69, 95, 1);
+$pink-color-dark: rgba(106, 49, 68, 1);
+$color-white: rgba(255, 255, 255, 1);
+$body-background-color: rgba(235, 235, 235, 1);
+$icon-background-color: rgba(210, 210, 210, 1);
+$icon-background-hover: rgba(238, 128, 47, 1);
+$text-color-norm: rgba(153, 153, 153, 1);
+$text-color-dark: rgba(56, 56, 56, 1);
+$text-color-darkest: rgba(51, 51, 51, 1);
+
+///@description: variables are used for mixin flex-box
+$flex-box-row-center: row, center, center;
+$flex-box-row-between: row, space-between, center;
+$flex-box-row-left: row, flex-start, center;
+$flex-box-col-center: column, center, center;
+
+$slider-files: (radio-1, radio-2, radio-3, radio-4, radio-5);
+$content-block-list: (block-1, block-2, block-3, block-4, block-5, block-6);
+
+
+///MIXIN
+@mixin flex-box ($flow, $justify, $align) {
+  display: flex;
+  flex-flow: $flow wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin transition($property: all, $time: 0.3s) {
+  transition: $property $time ease-in-out;
+}
+
+@mixin image-background($file-name) {
+  &:after {
+    content: url("../img/#{$file-name}.png");
+  }
+}
+///@description: initiates the radios and uploads the backgrounds for each radio input
+@mixin slider-init($file-list...) {
+  position: relative;
+
+  @each $radio in $file-list {
+    ##{$radio}:checked ~ &__label-wrapper label[for="#{$radio}"] {
+      background-color: $color-white;
+      border: 3px solid $text-color-darkest;
+    }
+    ##{$radio}:checked ~ &__image {
+      @include image-background($radio);
+    }
+  }
+}
+
+///@description: makes the background-image with the default text and background. This variant gives possibility
+///to operate the file name and the default text without writing img and text to html (for JS, for instance)
+///if the image does not exists (radio-1.png), the default text and background will be shown
+///all properties of :before & :after are written in class itself, without mixin (to avoid auto re-writing properties
+///to each element)
+@mixin content-block-init($content-block-list...) {
+  position: relative;
+  @each $block in $content-block-list {
+    &.#{$block} {
+      @include image-background($block);
+    }
+  }
+}
+
+///EXTEND
+%font-georgia {
+  font: {
+    family: "Georgia", sans-serif;
+    size: 13px;
+    weight: 400;
+  }
+  line-height: 18px;
+}
+
+%abs-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%content-block-heading {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  line-height: 16px;
+}
+///////////////////////////////////
+body {
+  background-color: $body-background-color;
+}
+
+.top-wrapper {
+  max-width: $top-width;
+
+  @extend %font-georgia;
+  color: $text-color-norm;
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+  margin: 0 auto;
+  background-color: $color-white;
+
+  &__layer {
+    width: 100%;
+    padding: 0 20px;
+
+    &.hiding {
+      position: relative;
+      border-bottom: 1px solid $pink-color;
+
+      input {
+        display: none;
+        &:checked ~ .nav-wrapper {
+          margin-top: -49px;
+        }
+      }
+
+      .hide-switcher {
+        position: absolute;
+        bottom: -25px;
+        right: 20px;
+        width: 30px;
+        height: 25px;
+        text-align: center;
+        line-height: 23px;
+        color: $color-white;
+        background-color: $pink-color;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        @include transition();
+
+        &:hover {
+          background-color: $pink-color-dark;
+          cursor: pointer;
+        }
+      }
+
+      nav {
+        @include flex-box($flex-box-row-center...);
+
+        .#{nav}__item {
+          display: inline-block;
+          font-size: 12px;
+          text-transform: capitalize;
+          color: $pink-color;
+          padding: 0 5px;
+
+          &:not(:first-of-type) {
+            border-left: 1px solid $pink-color;
+          }
+          &:last-of-type {
+            padding-right: 0;
+          }
+
+          &:hover {
+            color: $icon-background-hover;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &.nav-main {
+      padding-top: 30px; /// 30px of the padding is given to .logo-wrapper and form for the narrow media
+      padding-bottom: 80px;
+      margin-bottom: -80px;
+      background-color: $body-background-color;
+
+      .logo-wrapper {
+        @include flex-box(row, center, flex-end);
+        span {
+          display: inline-block;
+          font-size: 12px;
+          line-height: 15px;
+          padding: 0 5px;
+          margin: 0 10px;
+          border-left: 1px solid $text-color-norm;
+        }
+      }
+      .logo-wrapper, form {
+        margin-top: 30px; ///for the margin-top in the narrow media
+      }
+
+      input, button {
+        height: 33px;
+        @extend %font-georgia;
+        font-size: 12px;
+        border: none;
+      }
+      input {
+        float: left;
+        width: 220px;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+        &:focus::placeholder {
+          visibility: hidden;
+        }
+      }
+
+      nav {
+        @include flex-box($flex-box-row-left...);
+        margin-top: 50px;
+        width: 100%;
+        min-height: 50px;
+        font-size: 12px;
+        line-height: 50px;
+        color: $color-white;
+        border-radius: 5px;
+        background-color: $pink-color;
+
+        .#{nav}__item {
+          display: inline-block;
+          height: 100%;
+          text-transform: uppercase;
+          padding: 0 15px;
+
+          &:hover {
+            background-color: $pink-color-dark;
+          }
+          &:first-of-type:hover {
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+
+    &.form-wrapper {
+      @include flex-box($flex-box-row-center...);
+      align-items: flex-start;
+      padding: 0 20px 40px;
+      background-color: $body-background-color;
+
+      .block_half {
+        width: 467px;
+        margin-top: 40px;
+        &:first-of-type {
+          margin-right: 26px;
+        }
+
+        .contact-block {
+          margin-top: 20px;
+          span[data-contacts="email"] {
+            span {
+              color: $pink-color;
+            }
+          }
+        }
+      }
+
+      h4 {
+        @extend %content-block-heading;
+        color: $text-color-dark;
+        margin-bottom: 15px;
+      }
+
+      .content-block {
+        &:first-of-type {
+          margin-top: 20px;
+        }
+        .content-block__image {
+          width: 103px;
+          height: 103px;
+          margin-right: 20px;
+          border: 4px solid $body-background-color;
+          box-shadow: 1px 1px 0 rgba(0,0,0,0.1),
+          -1px -1px 0 rgba(0,0,0,0.1);
+
+          &:before {
+            content: "95 x 95px";
+            font-size: 16px;
+            line-height: 95px;
+          }
+
+          &:after {
+            ///content: url("../img/test.png"); ///sample image works. Otherwise - default background
+          }
+        }
+
+        .content-block__text {
+          h4 {
+            color: $pink-color;
+          }
+          p {
+            font-size: 12px;
+            line-height: 22px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-block {
+  @include flex-box($flex-box-row-center...);
+  align-items: flex-start;
+  margin-top: 40px;
+
+  &__image {
+    width: 64px;
+    height: 64px;
+    background-color: $text-color-darkest;
+    margin-right: 10px;
+
+    &:before {
+      display: block;
+      content: "64 x 64px";
+      @extend %font-georgia;
+      font-size: 12px;
+      line-height: 64px;
+      text-align: center;
+      color: $color-white;
+    }
+
+    &:after {
+      @extend %abs-full;
+      display: block;
+      content: "";
+      z-index: 10;
+    }
+
+    @include content-block-init($content-block-list...);
+
+    &.circle_big {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      margin-right: 18px;
+
+      &:before {
+        content: "128 x 128px";
+        font-size: 18px;
+        line-height: 128px;
+      }
+
+      &:after {
+        @extend %abs-full;
+        display: block;
+        ///content: url("../img/circle.png"); ///sample image. Otherwise - default background
+        z-index: 10;
+      }
+    }
+  }
+
+  &__text {
+    flex-basis: 50%;
+    flex-grow: 1;
+    h4 {
+      @extend %content-block-heading;
+      color: $pink-color;
+    }
+    p {
+      margin-top: 15px;
+    }
+
+    &__link {
+      color: $pink-color;
+
+      &:hover {
+        transform-origin: 0 0;
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+ form {
+   .button_submit {
+     width: 75px;
+     color: $color-white;
+     font-weight: bold;
+     border-top-right-radius: 5px;
+     border-bottom-right-radius: 5px;
+     background-color: $pink-color;
+
+     &:hover {
+       background-color: $pink-color-dark;
+       cursor: pointer;
+     }
+   }
+
+   input, textarea {
+     outline: none;
+     border: none;
+   }
+ }
+
+.block_half {
+  width: 435px;
+  &:first-of-type {
+    margin-right: 30px;
+  }
+
+  .content-block {
+    align-items: flex-end;
+    margin-top: 30px;
+
+    &__text {
+      img {
+        margin-right: 10px;
+      }
+      h4 {
+        color: $text-color-dark;
+      }
+      a {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  span {
+    font-size: 12px;
+    line-height: 19px;
+  }
+}
+
+#form-reg {
+  .button_submit {
+    width: 85px;
+    height: 35px;
+    border-radius: 7px;
+    margin-top: 5px;
+  }
+  input {
+    width: 225px;
+    height: 30px;
+    font-size: 13px;
+    line-height: 20px;
+    color: $text-color-dark;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  textarea {
+    width: 225px;
+    height: 110px;
+    margin-top: 10px;
+    border-radius: 5px;
+    resize: none;
+  }
+  input::placeholder, textarea::placeholder {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  input, textarea {
+    padding: 10px;
+    &:focus::placeholder {
+      visibility: hidden;
+    }
+  }
+}
+
+.block_heading {
+  overflow: hidden;
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+  line-height: 16px;
+  color: $text-color-dark;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 45px;
+
+  &:before, &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background-color: $body-background-color;
+    width: 50%;
+    height: 5px;
+    margin-bottom: 3px;
+  }
+  &:before {
+    margin-left: -100%;
+    margin-right: 10px;
+  }
+  &:after {
+    margin-right: -100%;
+    margin-left: 10px;
+  }
+}
+
+.slider {
+  padding: 30px;
+  padding-bottom: 0;
+  background-color: $color-white;
+
+  input {
+    display: none;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+    height: 360px;
+    background-color: $text-color-darkest;
+
+    &:before {
+      display: block;
+      content: "900 x 360px";
+      @extend %font-georgia;
+      font-size: 24px;
+      text-align: center;
+      line-height: 360px;
+      color: $color-white;
+    }
+
+    &:after {
+      @extend %abs-full;
+      display: block;
+      content: "";
+      z-index: 10;
+    }
+
+    &__text-block {
+      position: absolute;
+      bottom: 28px;
+      right: 10px;
+      width: 455px;
+      height: 115px;
+      padding: 13px 30px;
+      background-color: rgba(255, 255, 255, 0.6);
+      color: $text-color-darkest;
+
+      h2 {
+        font: {
+          size: 36px;
+          weight: 400;
+        }
+        line-height: 36px;
+      }
+      p {
+        margin-top: 5px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  @include slider-init($slider-files...);
+
+  &__label-wrapper {
+    margin: 20px auto 0;
+
+    label {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin: 2px;
+      border-radius: 50%;
+      background-color: $text-color-darkest;
+
+      &:hover {
+        cursor: pointer;
+        animation: popup .4s ease infinite;
+        background-color: $text-color-norm;
+      }
+    }
+  }
+}
+
+.icon-wrapper {
+  width: 200px;
+  height: 50px;
+
+  &__icon-block {
+    @include flex-box($flex-box-col-center...);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $icon-background-color;
+
+    &:not(:first-of-type) {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      background-color: $icon-background-hover;
+    }
+  }
+}
+
+.banner {
+  @include flex-box($flex-box-row-between...);
+  padding: 20px 30px;
+  color: $color-white;
+  background-color: $pink-color;
+  border-radius: 7px;
+  margin: 50px auto;
+
+  h2 {
+    font: {
+      size: 36px;
+      weight: 400;
+    }
+    line-height: 45px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  &__button {
+    display: inline-block;
+    width: 280px;
+    padding: 20px 0;
+    font-size: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $pink-color;
+    background-color: $color-white;
+    border-radius: 7px;
+
+    &:hover {
+      background-color: $pink-color-dark;
+      color: $color-white;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  @include flex-box($flex-box-row-between...);
+  background-color: $body-background-color;
+  border-top: 1px solid $color-white;
+
+  span {
+    font-size: 12px;
+  }
+}
+
+////OPTION
+.flex-box {
+  display: flex;
+  flex-flow: row wrap;
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+  &.right {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+  &.end {
+    align-items: flex-end;
+  }
+  &.top {
+    align-items: flex-start;
+  }
+
+  &__item_3 {
+    flex-basis: 275px;
+    &:not(:last-of-type) {
+      margin-right: 30px;
+    }
+  }
+
+  &__item_2 {
+    flex-basis: 50%;
+  }
+}
+
+.separ_line {
+  width: 100%;
+  height: 5px;
+  background-color: $icon-background-color;
+}
+.separ_line_grey {
+  outline: 1px solid $text-color-norm;
+}
