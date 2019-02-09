@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content = "text/html; charset=utf-8"/>
+    <meta name="description" content="sandbox">    
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0">
+    <title>Currencty AP</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+</head>
+<body>
+<div class="top-wrapper">
+    <h1>Currency Rates</h1>
+    <aside class="aside">
+        <button class="button_nav" data-type="latestData">Latest Rates</button>
+        <button class="button_nav" data-type="calc">Calculator</button>
+    </aside>
+    <main>
+        <div id="latest-rates-block">
+            <div class="header-wrapper">
+                <h2>Rates for Now: </h2>
+                <form action="#" name="curHistory" method="get">
+                    <input type="date" name="dateHistory" data-type="inputDate" title="Choose the Rates Date">
+                    <select name="baseCurSelect" data-type="baseCurSelect" title="Choose Base Currency">
+                        <option value="EUR" selected>EUR</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div id="calc-wrapper">
+            <h2>Currency Calculator</h2>
+            <form action="#" name="calculator" method="get">
+                <div class="radio-section">
+                    <div>
+                        <div class="flex-box left">
+                            <label for="radio-current">Current Date</label>
+                            <input type="radio" id="radio-current" name="rateTime" value="current" checked>
+                            <span>Today: </span>
+                        </div>
+                        <div class="flex-box left">
+                            <label for="radio-custom">Custom Date</label>
+                            <input type="radio" id="radio-custom" name="rateTime" value="custom">
+                            <input type="date" name="dateSelection" data-type="inputDate" title="Choose the Rates Date">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="input-wrapper">
+                        <input type="text" name="value1" data-type="inputCalc" title="Enter sum">
+                    </div>
+                    <select name="baseCur" data-type="curName" title="Choose Currency">
+                        <option value="EUR" selected>EUR</option>
+                    </select>
+                </div>
+                <div>
+                    <div class="input-wrapper">
+                        <input type="text" name="value2" data-type="inputCalc" title="Enter sum">
+                    </div>
+                    <select name="secondCur" data-type="curName" title="Choose Currency">
+                        <option value="USD" selected>USD</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

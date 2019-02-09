@@ -1,0 +1,230 @@
+* {
+	transition: all ease .4s;
+}
+
+body {
+	background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png) repeat;
+	font-size: 100%;
+	color: rgba(30,30,30,1);
+	/*margin: 0;*/ /*reset.css is plugged*/	
+}
+/*************TOP BORDER BODY****************/
+body:before {
+	content: "";
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	z-index: 100;
+	box-shadow: 0 0 10px rgba(0,0,0,.8);
+}
+/*****************END TOP BORDER BODY************/
+/*box-sizing: border-box;*/ /*plugged in reset.css*/
+
+a {
+	display: inline-block; /*restricts width and gives ability to be operated as block el*/
+}
+
+h1 {
+	font-size: 1.8em;
+	width: 100%;  /*flex-box item*/
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	text-shadow: 0.02em 0.02em 0.01em white;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	color: darkblue;
+}
+
+.top-wrapper {
+	font-size: 1rem;	/**will change all dimensions on media**/
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 1280px;
+	min-width: 900px;
+	margin: 5em auto;
+	padding: 2em;
+	text-align: center;
+	border-radius: 1em;
+	background-color: rgba(0,0,0,.2);
+	box-shadow: inset .5em .5em .8em rgba(255,255,255,.8), inset -.5em -.5em 1em rgba(0,0,0,.7), .5em .5em 1em rgba(0,0,0,.7);
+}
+
+aside {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 10em;
+}
+
+main {
+	width: calc(100% - 10em);
+	padding: 1em;
+	min-height: 30em;
+}
+
+h2 {
+	text-align: left;
+	letter-spacing: 0.03em;
+	text-shadow: 0.02em 0.02em 0.01em white;
+	color: darkblue;
+}
+
+#latest-rates-block {
+	display: block;
+}
+
+.header-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.header-wrapper input, select {
+	margin: 0 2em;
+}
+
+.rates-table {
+	border: 1px solid white;
+	border-collapse: collapse;
+	box-shadow: inset -.1em -.1em .3em rgba(0,0,0,.8), inset .1em .1em .3em rgba(0,0,0,.8) ;
+	background-color: rgba(182, 204, 237,.8);
+}
+
+td, th {
+	width: 7em;
+	padding: 0.5em;
+}
+td:nth-of-type(odd), th:nth-of-type(odd) {
+	background-color: rgba(0,0,0,.1);
+}
+
+#calc-wrapper {
+	display: none;
+}
+#calc-wrapper form {
+	width: 55em;
+	padding: 2em;
+	margin-top: 2em;
+	border: 1px solid white;
+	box-shadow: inset -.1em -.1em .3em rgba(0,0,0,.8), inset .1em .1em .3em rgba(0,0,0,.8);
+	background-color: rgba(182, 204, 237,.5);
+}
+
+.radio-section {
+	margin: 2em auto;
+}
+.radio-section span {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.radio-section label {
+	font-size: 1.2em;
+	cursor: pointer;
+}
+.radio-section label:hover ~ input[type="radio"] {
+	animation: popup .4s ease infinite;
+}
+.radio-section input[type="radio"] {
+	width: 2em;
+	margin: 0 1.2em;
+}
+.radio-section input[type="date"] {
+	display: none;
+	margin: 0;
+}
+#radio-custom:checked ~ input[type="date"] {
+	display: inline-block;
+}
+
+.input-wrapper {
+	position: relative;
+	display: inline-block;
+	margin: 1em;
+}
+
+select, input {
+	box-sizing: border-box;
+	width: 12em;
+	height: 2.5em;
+	padding: .3em;
+	cursor: pointer;
+}
+
+button {
+	min-width: 8em;
+	padding: 0.8em;
+	box-shadow: .2em .2em .2em rgba(0,0,0,.8);
+	cursor: pointer;
+}
+button:hover {
+	animation: popup .4s ease-in-out;
+}
+button:active {
+	box-shadow: .1em .1em .1em rgba(0,0,0,.8);
+}
+button.button_nav {
+	background-color: rgba(0,0,0,.5);
+	color: white;
+	margin: 1em auto;
+}
+/********OPTION*******/
+
+.alert-span {
+	position: absolute;
+	display: inline-block;
+	top: -20px;
+	left: 10px;
+	color: red;
+	font-weight: bold;
+	transform: scaleY(0);
+	animation: popup .4s ease-in-out forwards;
+}
+
+.error {
+	border: 2px solid darkred;
+}
+
+.valid {
+	border: 2px solid darkgreen;
+}
+
+.flex-box {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-box.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box.left {
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.flex-box.between {
+	justify-content: space-between;
+}
+
+.flex-box.end {
+	align-items: flex-end;
+}
+
+/************ANIMATIONS*************/
+@keyframes popup {
+	0% {
+		transform: scale(1.0);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1.0);
+	}
+}
