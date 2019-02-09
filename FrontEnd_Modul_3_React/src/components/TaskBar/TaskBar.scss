@@ -1,0 +1,49 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+
+.taskBar {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+
+  .innerBlock {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include init-font(22px, 400);
+
+    background-color: $white;
+    padding: 20px;
+    border: 1px solid $greyLightest;
+    box-shadow: inset 1px 1px 4px $greyNorm,
+    inset -0 -0 2px $greyNorm,
+    1px 1px 4px $greyNorm,
+    -0 -0 2px $greyNorm;
+    opacity: 0;
+    animation: fadeIn .4s ease forwards;
+  }
+}
+.textBlock {
+  padding: 5px 0;
+}
+
+.heading {
+  @include init-font(24px, 700);
+  color: $foxy;
+}
+
+.list {
+  list-style: disc inside;
+  padding: 10px 0;
+
+  &.spec {
+    color: $foxy;
+  }
+
+  .listItem {
+    margin: 5px auto;
+  }
+}

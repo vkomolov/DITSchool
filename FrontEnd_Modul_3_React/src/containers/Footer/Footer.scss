@@ -1,0 +1,59 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+@import "../../utils/global_styles/fonts";
+
+.footerWrapper {
+  @include flex-box($flex-box-row-left...);
+  min-height: 100px;
+  background: linear-gradient(to right, $white, $foxy);
+
+  .personBlock {
+    @include flex-box($flex-box-row-left...);
+    @include init-font(18px, 400);
+
+    font-family: "PT_Sans-Web-Regular", sans-serif;
+    padding: 20px;
+
+    .info {
+      display: inline-block;
+      padding-left: 10px;
+
+      .person {
+        @include init-font(24px, 700);
+        @include text-shadow(1px, 1px);
+        letter-spacing: 1px;
+        color: $foxy;
+        margin-bottom: 20px;
+      }
+
+      .email {
+        font-style: italic;
+      }
+
+      span {
+        display: block;
+      }
+
+      a {
+        display: inline-block;
+        color: $blue;
+        font-weight: 700;
+        transform-origin: 0 0;
+        margin-bottom: 5px;
+
+        &:hover {
+          cursor: pointer;
+          animation: popup .4s ease-in-out 1;
+        }
+      }
+    }
+
+    .prsImage {
+      display: inline-block;
+      width: 110px;
+      height: 114px;
+      background: url("../../assets/images/vk_110_compr.png") $greyNorm center/cover;
+    }
+  }
+}

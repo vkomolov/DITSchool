@@ -1,0 +1,10 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+
+.topWrapper {
+  @include flex-box($flex-box-row-center...);
+  max-width: 600px;
+  padding: 20px 0;
+  margin: 0 auto;
+}

@@ -1,0 +1,21 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+
+.totalWrapper {
+  @include flex-box($flex-box-row-center...);
+  height: 700px;
+
+  .filterBar {
+    width: 280px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .contentBlock {
+    width: calc(100% - 400px);
+    min-width: 300px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+}

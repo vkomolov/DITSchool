@@ -1,0 +1,9 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+
+.topWrapper {
+  padding: 10px;
+  @include flex-box($flex-box-col-left...);
+}
+

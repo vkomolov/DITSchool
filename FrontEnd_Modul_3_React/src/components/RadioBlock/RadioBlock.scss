@@ -1,0 +1,51 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+
+.radioWrapper {
+  position: relative;
+  width: 100%;
+  margin: 10px;
+  @include flex-box($flex-box-row-left...);
+
+  .radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    opacity: 0;
+
+    &:checked ~ .psRadio {
+      box-shadow: inset -0 -0 7px $white,
+      inset 0 0 7px $white;
+      background-color: $foxy;
+    }
+
+    &:checked ~ .label {
+      color: $foxy;
+      font-weight: 700;
+    }
+  }
+
+  .psRadio {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 5px solid $foxy;
+    background-color: $white;
+    margin-right: 10px;
+  }
+
+  .label {
+    display: inline-block;
+    @include init-font(22px, 400);
+
+    &:hover {
+      cursor: pointer;
+      color: $foxy;
+    }
+  }
+}

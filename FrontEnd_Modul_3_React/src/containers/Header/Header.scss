@@ -1,0 +1,54 @@
+@import "../../utils/global_styles/variables";
+@import "../../utils/global_styles/mixins";
+@import "../../utils/global_styles/animations";
+
+.headerWrapper {
+  padding: 20px 0;
+
+  .headingBlock {
+    @include flex-box($flex-box-row-between...);
+  }
+
+  .heading {
+    @include init-font(28px, 700);
+    @include text-shadow(1px, 1px);
+
+    color: $foxy;
+    letter-spacing: 2px;
+  }
+
+  .toggleTask {
+    display: inline-block;
+    position: relative;
+    @include init-font(22px, 400);
+    @include transition();
+
+    transform-origin: 100% 50%;
+    color: $foxy;
+    margin-left: 40px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 2px solid $foxy;
+    }
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -40px;
+      content: "";
+      width: 36px;
+      height: 24px;
+      background: url("../../assets/images/React-icon.png") center/cover;
+      animation: rotate 3s linear infinite;
+    }
+  }
+
+  .hr {
+    border: none;
+    height: 30px;
+    background: linear-gradient(to right, $white, $foxy);
+  }
+}
