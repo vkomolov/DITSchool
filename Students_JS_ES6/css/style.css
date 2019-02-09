@@ -1,0 +1,69 @@
+* {
+	transition: all ease .4s;
+}
+
+
+/*****************END TOP BORDER BODY************/
+/*box-sizing: border-box;*/ /*plugged in reset.css*/
+
+.top-wrapper {
+	max-width: 1280px;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+#button-block {
+	display: flex;
+	justify-content: center;
+	vertical-align: center;
+	max-width: 1024px;
+	margin: 20px auto;
+	text-align: center;
+	background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png);
+}
+
+.button {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	padding: 10px 5px;
+	margin: 10px;
+	background-color: lightblue;
+	cursor: pointer;
+}
+
+.spanAlert {
+	position: absolute;
+	display: block;
+	top: 105%;
+	left: 0;
+	width: 100%;
+	padding: 5px;
+	background-color: lightgreen;
+	color: white;
+}
+
+/**********OPTION**********/
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.flex.center {
+	justify-content: center;
+	align-items: center;
+}
+
+.flex.around {
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex.between {
+	justify-content: space-between;
+}
+
+.flex.end {
+	align-items: flex-end;
+}

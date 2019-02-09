@@ -1,0 +1,51 @@
+/*************TOP BORDER BODY for fun****************/
+body:before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0,0,0,.8);
+}
+
+body {
+    /* background-image: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png);
+    background-repeat: repeat; */
+    background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png) repeat;
+    font-size: 100%;
+}
+
+.top-wrapper {
+    max-width: 1860px;
+    min-width: 440px;
+    margin: 0 auto;
+    font-size: 1rem;	/**will change all dimensions on media**/
+    padding: 3em 1em;
+    text-align: center;
+}
+
+.top-wrapper > div {
+    display: inline-block;
+    text-align: left;
+    padding: 2em;
+    margin: 0 auto;
+}
+
+.top-wrapper h1 {
+    margin-bottom: .5em;
+}
+
+.top-wrapper pre {
+    font-size: 1.1em;
+    margin-top: 2em;
+}
+
+.push-top_1em {
+    margin-top: 1em;
+}
+
+.push-down_1em {
+    margin-bottom: 1em;
+}

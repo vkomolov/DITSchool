@@ -1,0 +1,266 @@
+@import "reset";
+@import "fonts";
+
+///VARIABLES
+$gen-font: "PlayfairDisplay-Regular";
+$gen-font-size: 14px;
+$ubuntu-font: "Ubuntu-Regular";
+$max-gen-width: 1200px;
+$body-background: rgba(240, 240, 240, 1);
+$content-background: rgb(255, 255, 255);
+$content-color: rgba(98, 98, 98, 1);
+$heading-h4-color: rgba(180, 173, 158, 1);
+
+///MIXIN
+@mixin flex-box ($flow, $justify, $align) {
+  display: flex;
+  flex-flow: $flow wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+///EXTEND
+%image-container {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+///MAIN
+body {
+  font-family: $gen-font, sans-serif;
+  font-size: $gen-font-size;
+  color: $content-color;
+  background-color: $body-background;
+
+  h2 {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-family: "Ubuntu-Regular", serif;
+    font-weight: 300;
+    line-height: 14px;
+    color: $heading-h4-color;
+    text-transform: uppercase;
+    /*padding: 30px 0 25px;*/
+    padding: 30px 0 25px;
+  }
+}
+
+.top-wrapper {
+  max-width: $max-gen-width;
+  margin: 0 auto;
+  padding-top: 70px;
+  margin-bottom: 70px;
+  background-color: $content-background;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+  .&__inner {
+    padding: 0 70px;
+  }
+}
+
+header {
+  .logo-wrapper {
+    @extend %image-container;
+    width: 119px;
+    height: 23px;
+  }
+  nav {
+    width: 100%;
+    max-width: 573px;
+
+    .&__span-link {
+      text-transform: uppercase;
+      transform-origin: 50% 100%;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        transform: translateY(3px);
+      }
+    }
+  }
+}
+
+.image-wrapper {
+  @extend %image-container;
+
+  &.main {
+    width: 100%;
+    max-width: 1061px;
+    max-height: 509px;
+    margin: 70px auto;
+  }
+
+  &.post-block__wrapper {
+    width: 100%;  /*block is wrapped with .post-block.half*/
+    max-height: 280px;
+  }
+}
+
+.content-block {
+  padding: 0 80px;
+}
+
+.post-block {
+  margin-top: 75px;
+
+  p {
+    line-height: 24px;
+    margin: 25px auto;
+  }
+
+  &.half {
+    max-width: 420px;
+    margin-top: 100px;
+
+    p {
+      overflow: hidden;
+      height: 65px;
+    }
+  }
+}
+
+.separate-block {
+  height: 280px;
+  text-align: center;
+  padding-top: 70px;
+  margin-top: 90px;
+  background-color: $body-background;
+
+  h2 {
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+    letter-spacing: 0.75px;
+  }
+
+   &__inn-center {
+    display: inline-block;
+    text-align: left;
+
+    .input-wrapper {
+      width: 400px;
+      margin-top: 80px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $content-color;
+
+      input {
+        width: 300px;
+        font-family: $gen-font, sans-serif;
+        font-size: $gen-font-size;
+        color: $content-color;
+        background-color: $body-background;
+        border: none;
+        margin: 0 5px;
+        transition: all 0.2s ease-in-out;
+
+        &:focus {
+          &::placeholder {
+            opacity: 0;
+          }
+
+          & ~ button {
+            animation: popup 0.3s ease infinite;
+          }
+        }
+      }
+
+      button {
+        float: right;
+        position: relative;
+        top: 2px;
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.space-block {
+  text-align: center;
+  padding-top: 130px;
+
+  .button {
+    display: inline-block;
+    font-size: 20px;
+    width: 165px;
+    height: 60px;
+    line-height: 60px;
+    margin: 35px auto;
+    border: 1px solid rgba(98, 98, 98, 1);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: $content-color;
+      color: $content-background;
+      cursor: pointer;
+    }
+  }
+
+  .free-space {
+    width: 100%;
+    height: 1335px;
+  }
+}
+
+.footer {
+  padding: 40px 0;
+  line-height: 24px;
+  color: rgba(0,0,0,1);
+  background-color: $body-background;
+  border-bottom: 2px solid $content-background;
+
+  span {
+    margin-right: 15px;
+  }
+
+  &__span-block {
+    line-height: 15px;
+    padding-left: 80px;
+  }
+
+  &__link-block {
+    line-height: 15px;
+    text-align: right;
+    width: 155px;
+    a {
+      margin-right: 15px;
+
+      &:hover > img {
+        animation: popup .4s ease infinite;
+      }
+    }
+  }
+}
+
+///ANIMATION
+@keyframes popup {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+///OPTION
+.inline {
+  display: inline-block;
+}
+
+.flex-box_center {
+  @include flex-box(row, center, center);
+}
+
+.flex-box_between {
+  @include  flex-box(row, space-between, center);
+}

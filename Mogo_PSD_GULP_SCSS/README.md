@@ -1,0 +1,4 @@
+- This project lays on gulp package installation;
+- used gulp-sass to realize the styling of PSD Sample;
+- used browserSync to auto-reload the browser;
+- used imagemin to auto-optimize the images

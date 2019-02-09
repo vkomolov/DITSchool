@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Events</title>
+    <style type="text/css">
+        .content {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            text-align: center;
+            max-width: 890px;
+            margin: 0 auto;
+            background-color: grey;
+            padding: 20px;
+        }
+        .content div {
+            flex-basis: 15%;
+            margin: 10px;
+            padding: 45px;
+            background-color: lightblue;
+        }
+        .content form input {
+            font-size: 1.1em;
+            line-height: 1.2em;
+            padding: 5px;
+            margin: 10px;
+        }
+        .image {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content one">
+        <div>Block1</div>
+        <div>Block2</div>
+        <div>Block3</div>
+    </div>
+    <div class="content two">
+        <div>Block2</div>
+        <div>Block3</div>
+        <div>Block4</div>
+    </div>
+    <div class="content three">
+        <form action="#" name="form">
+            <input type="text" placeholder="Enter here">
+        </form>
+    </div>
+    <div class="content four">
+    </div>
+    <div class="content five">
+    </div>
+    <div class="content six">
+    </div>
+    <div class="content seven">
+    </div>
+
+    <script>
+        /********to hang event on each of the children*********/
+        let blockArr = document.querySelector(".one").children;
+        for (let i = 0; i < blockArr.length; i++) {
+            blockArr[i].addEventListener("click", function (event) {
+                let target = event.target;
+                log("event worked on " + target.textContent);
+            });
+        }
+
+        /*****to hang event delegation on three blocks descending/ascending*****/
+        let content = document.querySelector(".two");
+        content.addEventListener("click", function (event) {
+            let target = event.target;
+            log("event on: " + target.textContent);
+        }, true); //true, false
+
+        /*********to filter input of digits by event.keyCode*****************/
+        let formInput = document.querySelector(".three");
+        formInput.onkeypress = function () {
+            if (event.keyCode < 48 || event.keyCode > 57) {
+                return false;
+            }
+            log(String.fromCharCode(event.keyCode));
+        };
+
+        /***DOES NOT WORK with addEventListerner 'return false'********************/
+        /*formInput.addEventListener("keypress", function () {
+            if (event.keyCode < 48 || event.keyCode > 57) {
+                event.returnValue = false;  //works by changed from 'return false' BUT NOT RECOMMENDED BY MOZILLA.org
+            }
+        });*/
+
+        /************Создать функцию preloadImages(sources, callback), которая предзагружает изображения
+         *********** из массива sources****************************************************************
+         * VER1*/
+        let imageBox = document.querySelector(".four");
+        if (document.images) {  //document.images - contains all images in the html document
+            let imgOne = new Image();
+            imgOne.setAttribute("class", "image");
+            let imgTwo = new Image();
+            imgTwo.setAttribute("class", "image");
+            let imgThree = new Image();
+            imgThree.setAttribute("class", "image");
+
+            imageBox.appendChild(imgOne);
+            imageBox.appendChild(imgTwo);
+            imageBox.appendChild(imgThree);
+
+            imgOne.src="./img/1.png";
+            imgTwo.src="./img/2.png";
+            imgThree.src="./img/3.png";
+        }
+        /**VER2********************************/
+        let boxImage = document.querySelector(".five");
+        let imageArr = ["./img/1.png", "./img/2.png", "./img/3.png"];
+        for (let i = 0; i < imageArr.length; i++) {
+            let image = new Image();
+            image.onload = function () {
+                image.setAttribute("class", "image");
+                boxImage.appendChild(image);
+            };
+            image.src = imageArr[i];
+        }
+
+        /**VER3********************************/
+        let box = document.querySelector(".six");
+        let imageBlock = []; //controls the load of all necessary qnty of images
+        let imgArr = ["./img/1.png", "./img/2.png", "./img/3.png"]; //getting array of image sources
+        for (let i = 0; i < imgArr.length; i++) {
+            let image = new Image();
+            image.onload = function () {
+                imageBlock.push(image);
+                if (imageBlock.length === imageArr.length) {
+                    imageBlock.forEach(function (item) {
+                        box.appendChild(item);
+                        item.setAttribute("class", "image");
+                    });
+                }
+            };
+            image.src = imageArr[i];
+        }
+
+        /**В цикле создать десять кнопок в качестве текста у которых указан индекс итерации.
+         Также в цикле повесить обработчик. При нажатии на кнопку, должен появиться alert с индексом итерации.
+         * */
+        let newBox = document.querySelector(".seven");
+        for (let i = 0; i <= 10; i++) {
+            let button = newBox.appendChild(document.createElement("button"));
+            button.textContent = "iteration: " + (i+1);
+            button.addEventListener("click", function () {
+                alert(this.textContent);
+            });
+        }
+
+        /**VER2*/
+        /*newBox.addEventListener("click", function (event) {
+            let target = event.target;
+            log(target);
+            if (target.tagName === "BUTTON") {
+                alert(target.textContent);
+            }
+        });*/
+
+////////////////////SUGAR///////////////
+        function log(item) {
+            console.log(item);
+        }
+    </script>
+</body>
+</html>
+<!-- function preloader(){
+        if (document.images) {
+            var img1= new Image();
+            var img2 = new Image();
+            var img3 = new Image();
+
+            img.src = "http://example.com/img/img1.jpg";
+            img.src = "http://example.com/img/img2.jpg";
+            img.src = "http://example.com/img/img3.jpg";
+        }
+    }
+
+    function addEventListener(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function () {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
+            }
+        }
+    }
+    addEventListener(preloader); -->

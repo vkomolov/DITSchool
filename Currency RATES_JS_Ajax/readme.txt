@@ -1,0 +1,6 @@
+Allows to select any type of currency to another currency, in a certain period of time. 
+When selecting the dates, the maximum allowed period of time (14 days) will be controlled.
+If you select dates and the main currency, then the asynchronous requests will be sent through "promise.all" for each day of the specified period. And each fetch is loaded asynchronously (who is the first), and not by order (day + 1).
+When you select the second currency for the comparison with the base one, then you already have a loaded array of all trades of the specified period with the base currency. This allows,  by changing the choice of the second currency, not to make the next requests to the server.
+When you rechange the base currency or any of the dates, then the next request-promises will be sent. It automaticaly refresh the Chart and all data.
+The Chart is made in a way to describe very little changes of the rates in a better view, using the relative co-ratio of the min value of the rates to other values for the better demonstration of changes. It is not possible to adjust the algorythm of the Outer Chart Libraries.

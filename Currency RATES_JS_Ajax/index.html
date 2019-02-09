@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content = "text/html; charset=utf-8"/>
+    <meta name="description" content="AJAX requests for Currency Rates">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <title>Ajax Currency Rates</title>
+    <link rel="stylesheet" type="text/css" href="./src/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css">
+    <script type="text/javascript" src="./src/js/main.js"></script>
+</head>
+<body>
+<div class="top-wrapper">
+    <h1>Используя <a href="https://exchangeratesapi.io/" target="_blank">https://exchangeratesapi.io/</a>
+        создать график валют за 2 недели</h1>
+    <form action="#" name="form-select" method="get" id="form-select">
+        <h3 data-type="mssgTime">За какой период ввести оценку?</h3>
+        <div class="flex-box center">
+            <div class="form__block">
+                <span>С</span>
+                <input type="date" name="from-date" title="Выберите начальную дату">
+            </div>
+            <div class="form__block">
+                <span>ПО</span>
+                <input type="date" name="to-date" title="Выберите конечную дату">
+            </div>
+        </div>
+        <h3 data-type="mssgCurr">Выберите отношения валют</h3>
+        <div class="flex-box center">
+            <div class="form__block">                
+                <select name="base-select" title="Выберите базовую валюту">
+                    <option value="" disabled selected>Выберите Валюту</option>                    
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+            <div class="form__block">
+                <select name="cur-select" title="Выберите валюту для сравнения">
+                    <option value="" disabled selected>К какой Валюте</option>
+                    <option value="EUR">EUR</option>                    
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="graph-wrapper">
+        <h2>Относительные изменения курсов валют к минимальному значению на период с <span data-type="from">__________</span> по
+            <span data-type="to">__________</span></h2>
+        <h3>Базовая Валюта <span data-type="base">___</span> к Валюте <span data-type="eval">___</span></h3>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lessont 14 Arrays</title>
+</head>
+<body>
+<script type="text/javascript">
+///////////TASK
+    /***Создать массив из трех любых числовых значений. В отдельные переменные записать:
+     * 1) сумму всех значений элементов массива;
+     * 2) логическое выражение, которое дает true лишь если каждое следующее значение массива
+     * больше предыдущего.
+     * */
+
+    let arr = [1, 3, 2, 3, 1];
+    let sumArr = getSum(arr);
+    //console.log(sumArr);
+
+    let increase = isIncrease(arr);
+    //console.log(increase);
+
+    /**@description: cycling elements of the Array, sum of elements returns
+     * @param: {arr} Array with elements for sum
+     * @return: sum of elements
+     * */
+    function getSum(arr) {
+        let sum = 0;
+        arr.forEach(function (number) {
+            sum += number;
+        });
+        return sum;
+    }
+
+    /**@description: cycling elements of the Array, checking that the next element is not bigger
+     * than previous. Checking each element with the next one to be bigger.
+     * @params: {arr} Array to be checked for elements
+     * @return: boolean if each next element is bigger than previous
+     * */
+    function isIncrease(arr) {
+        if (arr.length) {
+            let lastNum = 0;
+            let is = true;
+            arr.forEach(function (number) {
+                let isBigger = lastNum < number;
+                if (!isBigger) {
+                    is = false;
+                }
+                lastNum = number;
+            });
+            return is;
+        }
+    }
+////////////////TASK
+/***Реализовать функцию глубокого копирования объекта**/
+    let obj = {
+        a : 25,
+        b : {
+            b_1 : "string",
+            b_2 : [12, 15, 27, true],
+            b_3 : false
+        },
+        c : {
+            c_1 : "c1 string",
+            c_2 : {
+                c_2_1 : "string",
+                c_2_2 : 48
+            }
+        }
+};
+    let objCopy = copy(obj);
+    //console.log(objCopy);
+    let jsonObject = JSONCopy(obj);
+    //console.log(jsonObject);
+
+    /**@description: makes copy of values to new Object. Each property is checked to be Object. If true - recurse obj
+     * @param: {obj} Object to be copied.
+     * @return: copied object with copied properties
+     * */
+    function copy(obj) {
+        if (typeof obj !== "object") {
+            return obj;
+        }
+        let objCopy = {};
+        for (let key in obj) {
+            if (typeof obj[key] === "object") {
+                objCopy[key] = copy(obj[key]);
+            }
+            else {
+                objCopy[key] = obj[key];
+            }
+        }
+        return objCopy;
+    }
+    /**@description: realisation by JSON. Slower - just for example.
+     * @param: {obj} Object to be copied.
+     * @return: copied object with copied properties
+     * */
+    function JSONCopy(obj) {
+        let objCopy = JSON.parse(JSON.stringify(obj));
+        return objCopy;
+    }
+
+////////////////////TASK
+/**Реализовать футнкцию deep flatten, как здесь https://lodash.com/docs/4.17.10#flattenDeep
+ * _.flattenDeep([1, [2, [3, [4]], 5]]); // => [1, 2, 3, 4, 5]
+ * */
+
+let sample = [[1, [2, [3, [4]], 5]]];
+
+let sampleFlat = flattenDeep(sample);
+//console.log(sampleFlat);
+
+/**@description: to make new array from all properties in the given array, including inner arrays.
+ * @param: {arr} Array to take properties from
+ * @return new Array with inner properties of given array
+ * */
+ function flattenDeep(arr) {
+   let flatArr = [];
+   getArrVal(arr);
+
+   /**@description: if the element is Array => cycling elements of the array. Else => pushing to the new array.
+    * Recursive version.
+    * @param: {val} element, possibly array
+    * @return: pushing the value to the new Array
+    * */
+   function getArrVal(val) {
+       if (Array.isArray(val)) {
+           for (let i = 0; i < val.length; i++) {
+               if (Array.isArray(val[i])) {
+                   getArrVal(val[i]);
+               }
+               else {
+                   flatArr.push(val[i]);
+               }
+           }
+       }
+       else {
+           flatArr.push(val);
+       }
+   }
+   return flatArr;
+}
+
+///////////////TASK
+/**Реализовать сортировку пузырями
+ * */
+
+let longArr = [12, 49, 38, 1, 87, 12, 10, 7, 56, 36, 65];
+//console.log("Initial Array: ");
+//console.log(longArr);
+
+let bulbResult = shakerSort(longArr);
+//console.log("Sorted Array: ");
+// console.log(bulbResult);
+
+let selectSort = selectionSort(longArr);
+//console.log("Sorted Array: ");
+//console.log(selectSort);
+
+/**@description: sorting elements changing pairs by the cycles with the array length.
+ * bigger values are changing to the right. Each new cycle of changing runs with minus 1 position of the length.
+ * To prevent the unnecessary cycles of changing elements (when already sorted) it is the flag of checking
+ * */
+function shakerSort(arr) {
+    var innArr = arr.slice();    //making copy of the arr (for future tasks with arr)
+    var arrLen = innArr.length;
+    for (let i = 0; i < arrLen - 1; i++) {
+        var flag = false;
+        for (let j = 0; j < (arrLen - 1 - i); j++) {
+            if (innArr[j + 1] < innArr[j]) {
+                let temp = innArr[j + 1];
+                innArr[j + 1] = innArr[j];
+                innArr[j] = temp; //with additional variable
+                /**without additional variable
+                 * */
+                //[innArr[j], innArr[j+1]] = [innArr[j+1], innArr[j]];
+
+                flag = true;
+            }
+        }
+        if (!flag) {    //if no changing occurs;
+            console.log("sort ready at iteration: " + i);
+            break;
+        }
+        //console.log("going to right");
+        //console.log(innArr);
+        for (let j = (arrLen - 1 - i); j > i; j--) {
+            if (innArr[j] < innArr[j - 1]) {
+                let temp = innArr[j];
+                innArr[j] = innArr[j - 1];
+                innArr[j - 1] = temp;
+            }
+            flag = true;
+        }
+        if (!flag) {    //if no changing occurs;
+            console.log("cycle break at iteration: " + i);
+            break;
+        }
+        //console.log("going to left");
+        //console.log(innArr);
+    }
+    return innArr;
+}
+
+/**@description: making cycles by the arr.length, looking for the smallest value, shifting it to the left.
+ * Then making new cycle, starting from the next position of the array.
+ * @param: {arr} still arr for sorting
+ * @return: new sorted array
+ * */
+
+function selectionSort(arr) {
+    var innArr = arr.slice();    //making copy of the arr (for future tasks with arr)
+    var arrLen = innArr.length;
+    var flag = false;
+    for (let i = 0; i < arrLen - 1; i++) {
+        var min = i;
+        for (let j = i + 1; j < arrLen; j++) {
+            if (innArr[j] < innArr[min]) {
+                min = j;
+                flag = true;
+            }
+        }
+        if (!flag) {
+            console.log("cycle break at iteration: " + i);
+            break;
+        }
+        var temp = innArr[min];
+        innArr[min] = innArr[i];
+        innArr[i] = temp;
+    }
+    return innArr;
+}
+
+</script>
+</body>
+</html>

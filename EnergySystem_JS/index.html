@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EnergySystem</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script type="text/javascript" src="js/energy_core.js"></script>
+</head>
+<body>
+<div class="top-wrapper">
+    <div id="plate">
+        <h1>Energy System</h1>
+        <hr/>
+        <h2 class="daytime" data-type="day-time">Day</h2>
+        <div class="plate__interface flex-box center top">
+            <div class="result-block">
+                <span class="result-block__result">Energy Balance: <span data-type="balance"></span></span>
+                <span class="result-block__result">BUDGET: <span data-type="budget"></span></span>
+            </div>
+            <div class="debit">
+                <table id="el-station">
+                    <caption>Electro Station</caption>
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Big</th>
+                        <th>Meddium</th>
+                        <th>Small</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sell-row">
+                        <td>Buy/Del</td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-elStation-big">+</span>
+                            <span class="button_interface" data-button="des-elStation-big">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-elStation-middle">+</span>
+                            <span class="button_interface" data-button="des-elStation-middle">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-elStation-small">+</span>
+                            <span class="button_interface" data-button="des-elStation-small">-</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Qnty</td>
+                        <td data-type="elStation-big-qnty"></td>
+                        <td data-type="elStation-middle-qnty"></td>
+                        <td data-type="elStation-small-qnty"></td>
+                        <td data-type="elStation-qntyTotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Capacity</td>
+                        <td data-type="elStation-big-capacity"></td>
+                        <td data-type="elStation-middle-capacity"></td>
+                        <td data-type="elStation-small-capacity"></td>
+                        <td data-type="elStation-capacityTotal"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table id="solar-station">
+                    <caption>Solar Station</caption>
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Big</th>
+                        <th>Medium</th>
+                        <th>Small</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sell-row">
+                        <td>Buy/Del</td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-solarStation-big">+</span>
+                            <span class="button_interface" data-button="des-solarStation-big">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-solarStation-middle">+</span>
+                            <span class="button_interface" data-button="des-solarStation-middle">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-solarStation-small">+</span>
+                            <span class="button_interface" data-button="des-solarStation-small">-</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Qnty</td>
+                        <td data-type="solarStation-big-qnty"></td>
+                        <td data-type="solarStation-middle-qnty"></td>
+                        <td data-type="solarStation-small-qnty"></td>
+                        <td data-type="solarStation-qntyTotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Capacity</td>
+                        <td data-type="solarStation-big-capacity"></td>
+                        <td data-type="solarStation-middle-capacity"></td>
+                        <td data-type="solarStation-small-capacity"></td>
+                        <td data-type="solarStation-capacityTotal"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="credit">
+                <table id="houses">
+                    <caption>Houses</caption>
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Big</th>
+                        <th>Medium</th>
+                        <th>Small</th>
+                        <th>Smallest</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sell-row">
+                        <td>Buy/Del</td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-house-big">+</span>
+                            <span class="button_interface" data-button="des-house-big">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-house-middle">+</span>
+                            <span class="button_interface" data-button="des-house-middle">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-house-small">+</span>
+                            <span class="button_interface" data-button="des-house-small">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-house-smallest">+</span>
+                            <span class="button_interface" data-button="des-house-smallest">-</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>House Qnty</td>
+                        <td data-type="house-big-qnty"></td>
+                        <td data-type="house-middle-qnty"></td>
+                        <td data-type="house-small-qnty"></td>
+                        <td data-type="house-smallest-qnty"></td>
+                        <td data-type="house-qntyTotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Flats Qnty</td>
+                        <td data-type="house-big-capacity"></td>
+                        <td data-type="house-middle-capacity"></td>
+                        <td data-type="house-small-capacity"></td>
+                        <td data-type="house-smallest-capacity"></td>
+                        <td data-type="house-capacityTotal"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table id="e-lines">
+                    <caption>Power Lines</caption>
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Big</th>
+                        <th>Meddium</th>
+                        <th>Small</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sell-row">
+                        <td>Buy/Del</td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-powerLine-big">+</span>
+                            <span class="button_interface" data-button="des-powerLine-big">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-powerLine-middle">+</span>
+                            <span class="button_interface" data-button="des-powerLine-middle">-</span>
+                        </td>
+                        <td>
+                            <span class="button_interface plus" data-button="buy-powerLine-small">+</span>
+                            <span class="button_interface" data-button="des-powerLine-small">-</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Qnty</td>
+                        <td data-type="powerLine-big-qnty"></td>
+                        <td data-type="powerLine-middle-qnty"></td>
+                        <td data-type="powerLine-small-qnty"></td>
+                        <td data-type="powerLine-qntyTotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Capacity</td>
+                        <td data-type="powerLine-big-capacity"></td>
+                        <td data-type="powerLine-middle-capacity"></td>
+                        <td data-type="powerLine-small-capacity"></td>
+                        <td data-type="powerLine-capacityTotal"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="turn-block">
+                <table id="result-table">
+                    <caption>Results for Turn <span class="daytime" data-type="day-timeTurn">Night</span></caption>
+                    <thead>
+                    <tr>
+                        <th>Produced</th>
+                        <th>Consumed</th>
+                        <th>Saldo</th>
+                        <th>Sold</th>
+                        <th>Bought</th>
+                        <th>Profit</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-type="produced"></td>
+                        <td data-type="consumed"></td>
+                        <td data-type="saldo"></td>
+                        <td data-type="sold"></td>
+                        <td data-type="bought"></td>
+                        <td data-type="profit"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <img src="https://image.flaticon.com/icons/svg/122/122664.svg" alt="turn button"
+                     title="If ready, make turn" data-button="makeTurn">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

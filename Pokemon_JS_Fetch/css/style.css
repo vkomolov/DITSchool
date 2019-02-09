@@ -1,0 +1,117 @@
+* {
+	transition: all ease .4s;
+}
+
+body {    
+	/*margin: 0;*/ /*reset.css is plugged*/	
+}
+/*************TOP BORDER BODY****************/
+body:before {
+	content: "";
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	z-index: 100;
+	box-shadow: 0 0 10px rgba(0,0,0,.8);
+}
+/*****************END TOP BORDER BODY************/
+/*box-sizing: border-box;*/ /*plugged in reset.css*/
+
+a {
+	display: inline-block; /*restricts width and gives ability to be operated as block el*/
+}
+
+.top-wrapper {
+	max-width: 1280px;
+	font-size: 1rem;
+	margin: 0 auto;
+	border: 2px solid blue;
+}
+
+.vers-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 600px;
+	margin: 2em auto;
+}
+
+.button {
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+.button:hover {
+	cursor: pointer;
+	transform: translateY(1.1);
+	box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+}
+
+.button.button_vers {
+	width: 10em;
+	padding: .7em;
+	margin: .7em;
+	background-color: lightblue;
+}
+
+#pokemon-wrapper {
+	text-align: center;
+	margin: 40px auto;
+}
+
+#pokemon-wrapper h1 {
+	font-weight: bold;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 0.1em 0.1em 0.4em rgba(0, 0, 0, 0.8);
+}
+
+#pokemon-wrapper ul {
+	display: inline-block;
+	margin: 20px auto;
+	color: blue;
+}
+
+#pokemon-wrapper ul li {
+	padding: 10px;
+	font-size: 24px;
+	letter-spacing: 1px;
+	text-align: left;
+}
+#pokemon-wrapper ul li:hover {
+	transform: scale(1.1);
+	box-shadow: 2px 2px 4px rgba(0,0,0,.8);
+}
+
+/********OPTION*******/
+.rel {
+	position: relative;
+}
+
+.flex-box {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-box.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box.around {
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-box.between {
+	justify-content: space-between;
+}
+
+.flex-box.end {
+	align-items: flex-end;
+}

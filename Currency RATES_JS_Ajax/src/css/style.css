@@ -1,0 +1,140 @@
+body {
+    background: url(http://subtlepatterns.com/patterns/light_noise_diagonal.png) repeat;
+    font-size: 100%;
+}
+
+.top-wrapper {
+    max-width: 1280px;
+    min-width: 440px;
+    margin: 5em auto;
+    font-size: 1rem;	/**will change all dimensions on media**/
+    padding: 3em 2em;
+    text-align: center;
+    border-radius: 1em;
+    background-color: rgba(0,0,0,.2);
+    box-shadow: inset .5em .5em .8em rgba(255,255,255,.8), inset -.5em -.5em 1em rgba(0,0,0,.7), .5em .5em 1em rgba(0,0,0,.7);
+}
+
+.top-wrapper h1 {
+    font-size: 1.7em;
+}
+
+.top-wrapper h1 a {
+    color: darkblue;
+    cursor: pointer;
+}
+
+#form-select {
+    margin-top: 2em;
+}
+
+.form__block {
+    position: relative;
+    padding-left: 2em;
+    margin: 1em;
+}
+
+.form__block span {
+    position: absolute;
+    top: .5em;
+    left: 0;
+    display: inline-block;
+    width: 1em;
+    text-align: right;
+}
+
+.form__block select, .form__block input {
+    box-sizing: border-box;
+    width: 12em;
+    height: 2.5em;
+    padding: .3em;
+}
+
+.form__block select option {
+    text-align: center;
+}
+
+.graph-wrapper {
+    width: 80%;
+    min-width: 480px;
+    height: 30em;
+    padding: 2em;
+    margin: 2em auto;
+    border-radius: 1em;
+    border: 1px solid white;
+    box-shadow: inset -.1em -.1em .3em rgba(0,0,0,.8), inset .1em .1em .3em rgba(0,0,0,.8) ;
+    background-color: rgba(182, 204, 237,.8);
+}
+
+.top-wrapper h2 {
+    line-height: 1.5em;
+}
+
+.graph-wrapper h3 {
+    margin: 1em auto;
+}
+
+.graph-result_block {
+    position: relative;
+    width: 3em;
+    margin: .2em;
+    margin-bottom: 4em;
+    border: 1px solid rgba(0,0,0,.7);
+}
+
+.graph-result_col {
+    font-size: .8em;
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightgreen;
+    transition: all .4s ease-in-out;
+}
+
+.graph-result_col__value {
+    position: absolute;
+    z-index: 10;
+    top: -1em;
+    left: .2em;
+}
+
+.graph-result_col__date {
+    position: absolute;
+    z-index: 15;
+    width: 5em;
+    bottom: -3.3em;
+    left: -2.5em;
+    transform-origin: 50% 0;
+    transform: rotate(-45deg);
+}
+
+/************OPTION****************/
+.flex-box {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.flex-box.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box.around {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-box.between {
+    justify-content: space-between;
+}
+
+.flex-box.end {
+    align-items: flex-end;
+}
+
+.flex-box.top {
+    align-items: flex-start;
+}

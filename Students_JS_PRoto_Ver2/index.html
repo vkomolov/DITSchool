@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content = "text/html; charset=utf-8"/>
+    <meta name="description" content="sandbox">
+    <!--<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0">
+    <title>SandBox</title>
+    <!--<link rel="stylesheet" type="text/css" href="./css/reset.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="./css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+    
+</head>
+<body>
+    <div class="top-wrapper">
+        <div>
+            <h1>Задание &quot;Прототипирование&quot;</h1>
+            <pre>Написати функцію-конструктор Student. Студент має ім'я, прізвище і набір оцінок.
+student = {name: 'Alexey', surname: 'Petrov', grades: [3,3,3,4,5,6]}
+у об'єкта student має бути два методи fullName () і gradesAvarage () - середня оцінка
+
+Який функціонал повинна надавати функція-конструктор Student
+1) Вона повинна зберігати список всіх створених студентів. Тобто в будь-який момент можна вивести список студентів, які були створені.
+2) Вона повинна обчислювати кращого студента (за середньою оцінкою) і виводити його в консоль.
+
+Приклад роботи і результат в консолі:
+
+var student1 = new Student ({name: 'Ivan', surname: 'Ivanov', grades: [4,5,5]});
+var student2 = new Student ({name: 'Semen', surname: 'Semenov', grades: [3,5,5]});
+var student3 = new Student ({name: 'Petr', surname: 'Petrov', grades: [4,3,5]});
+
+console.log (Student.group) -> виводить масив з трьома студентами
+
+console.log (Student.showAllStudents ()) -> виводить модифікований список студентів.
+Виводиться повне ім'я студента і його середній бал
+При цьому цей список відсортований за середньою оцінкою.
+і кількість знаків після точки не повинно перевищувати 2 знака.
+
+0: "Ivan Ivanov. Середній бал = 4.67"
+1: "Semen Semenov. Середній бал = 4.33"
+2: "Petr Petrov. Середній бал = 4.00"
+
+console.log (Student.showBestStudent ()) -> відображає таке повідомлення
+"Ivan Ivanov - кращий студент курсу. Середній бал = 4.67"
+
+console.log (Student.bestStudent) -> висновок просто об’єкт студента. в даному випадку це буде student1.
+
+Код повинен бути максимально розбитий на дрібні функції. Для того, щоб визначити контекст виклику ф-та
+використовуємо call / apply / bind
+            </pre>
+            <h3>Все пока в консоли...</h3>
+        </div>
+    </div>
+</body>
+</html>
