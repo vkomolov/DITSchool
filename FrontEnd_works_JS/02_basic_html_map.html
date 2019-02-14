@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Изучение FullStack в PHP-Academy"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+	<!--<script src="./js/css_mediaquarry_min.js"></script>-->
+	<!--Script allows to code without prefixes for browsers. They are taked auto-->
+	<script src="./js/prefixFree.js"></script>
+	<script defer src="./js/funcCollection.js"></script>
+	<script defer src="./js/clock.js"></script>
+	<script defer src="./js/calculator.js"></script>
+	<title>Front Basic HTML Map Area</title>
+</head>
+<body>
+<div class="top-wrapper">
+	<header class="layer header">
+		<div class="layer flex-box center">
+			<a href="https://php-academy.kiev.ua/" target="_blank" class="logo_link">
+				<img src="./images/php_academy.png"
+					 alt="PHP-Academy Logo"
+					 title="php-academy.kiev.ua"
+				>
+			</a>
+			<div id="header__saying">Think FullStack</div>
+		</div>
+		<div class="layer flex-box center">
+			<div class="header__icon-wrapper">
+				<a href="./index.html" title="Home Front" class="header__icon home"></a>
+				<div class="clockIcon"></div>
+				<div class="header__icon calc"></div>
+			</div>
+			<nav class="header__block_nav">
+				<ul class="layer nav-wrapper__list">
+					<li class="nav-wrapper__list__item">Front-End
+						<ul class="nav-wrapper__list_drop">
+							<li><a href="01_basic_ html_letter.html">Basic Html Letter</a></li>
+							<li><a href="02_basic_html_map.html">Basic Html Map</a></li>
+							<li><a href="03_psd_golden.html" target="_blank">PSD Golden</a></li>
+							<li><a href="04_psd_elena.html" target="_blank">PSD Elena</a></li>
+							<li><a href="JS Basic.html">JS Basic</a></li>
+						</ul>
+					</li>
+					<li class="nav-wrapper__list__item">Back-End
+						<ul class="nav-wrapper__list_drop">
+							<li><a href="#">upcoming...</a></li>
+							<li><a href="#">upcoming...</a></li>
+							<li><a href="#">upcoming...</a></li>
+							<li><a href="#">upcoming...</a></li>
+							<li><a href="#">upcoming...</a></li>
+						</ul>
+					</li>
+					<li class="nav-wrapper__list__item menu-button">&#9660</li>
+					<li class="nav-wrapper__list__item">Lorem
+						<ul class="nav-wrapper__list_drop">
+							<li><a href="#">Retro Mode</a></li>
+							<li><a href="#">Meditation Mode</a></li>
+							<li><a href="#">Rock Mode</a></li>
+						</ul>
+					</li>
+					<li class="nav-wrapper__list__item">Lorem
+						<ul class="nav-wrapper__list_drop">
+							<li><a href="#">Lorem....</a></li>
+							<li><a href="#">Lorem....</a></li>
+							<li><a href="#">Lorem....</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="layer article push-top_2em">
+		<h1 class="icons-between ukr rel">Областные администрации Украины</h1>
+		<hr class="hr_hidden"/>
+        <h3 class="push-down_1em">HTML map area coords keeps live in media queries</h3>
+		<div class="layer">
+            <div class="map-wrapper">
+                <img src="./images/map_ukraine.png" alt="Карта Украины" usemap="#ukraine-map"/>
+                <map name="ukraine-map" id = "ukraine-map">
+                    <area alt="Волынская область" title="Волынская область" href="http://voladm.gov.ua/"
+						  target="_blank" shape="poly"
+						  coords="53,56,49,50,54,47,50,38,45,32,44,22,48,19,53,20,59,18,61,13,71,13,79,12,89,12,92,14,
+						  89,22,89,32,95,35,98,40,97,42,97,46,93,54,85,55,77,58,76,64,68,65,64,58,57,54"/>
+                    <area alt="Ровенская область" title="Ровенская область" href="http://www.rv.gov.ua"
+						  target="_blank" shape="poly"
+						  coords="77,66,79,59,86,57,93,56,98,51,100,40,96,32,93,31,91,23,95,15,99,12,103,15,110,16,116,
+						  20,124,19,127,26,132,26,134,31,129,32,128,40,125,46,124,51,124,56,122,60,116,62,111,64,111,
+						  69,103,72,95,70,87,73,81,75" />
+                    <area alt="Житомирская область" title="Житомирская область" href="http://oda.zt.gov.ua/"
+						  target="_blank" shape="poly" coords="124,62,127,57,127,48,129,42,131,34,137,32,140,28,144,29,
+						  148,26,152,29,157,29,158,32,164,28,168,27,169,30,169,35,168,40,171,46,172,49,172,56,173,59,
+						  171,68,175,74,176,79,176,83,176,86,173,88,171,94,168,97,164,96,164,90,158,86,155,89,151,90,
+						  143,90,137,90,133,84,135,75,129,70" />
+                    <area alt="Львовская область" title="Львовская область" href="http://loda.gov.ua/"
+						  target="_blank" shape="poly" coords="52,59,57,58,61,59,65,65,68,66,75,67,77,70,77,75,79,78,
+						  79,84,73,86,71,89,64,95,57,94,55,102,54,104,49,104,46,106,39,106,35,111,35,114,34,120,28,116,
+						  22,113,20,107,18,104,19,96,17,90,30,75" />
+                    <area alt="Закарпатская область" title="Закарпатская область" href="http://www.carpathia.gov.ua/"
+						  target="_blank" shape="poly"
+						  coords="13,107,19,112,23,115,27,119,35,122,37,126,40,127,43,132,47,132,52,136,54,141,55,149,
+						  52,152,44,152,36,150,28,147,23,144,21,147,16,146,15,142,11,141,6,135,3,130,2,123,5,118" />
+                    <area alt="Ивано-Франковская область" title="Ивано-Франковская область"
+						  href="http://www.if.gov.ua/" target="_blank" shape="poly"
+						  coords="37,120,37,113,40,108,47,108,52,107,57,105,59,96,64,96,65,101,65,105,67,110,67,115,72,
+						  120,75,124,78,123,83,126,81,130,80,135,74,136,70,139,65,144,64,147,64,156,59,154,56,
+						  146,56,139,52,132,42,126" />
+                    <area alt="Тернопольская область" title="Тернопольская область" href="http://www.oda.te.gov.ua/"
+						  target="_blank" shape="poly"
+						  coords="100,135,93,127,88,128,81,120,76,120,70,114,67,96,73,91,77,87,81,84,82,78,85,76,92,
+						  74,96,73,99,75,95,81,96,89,99,92,95,102,95,113,95,123" />
+                    <area alt="Хмельницкая область" title="Хмельницкая область" href="http://www.adm.km.ua/"
+						  target="_blank" shape="poly"
+						  coords="104,134,99,125,98,115,99,102,101,95,101,88,99,84,99,79,102,75,109,72,113,71,114,66,
+						  120,63,125,67,125,73,129,76,132,79,129,84,130,91,135,94,133,101,135,106,133,111,127,111,124,
+						  117,123,124,124,130,116,131,111,129" />
+                    <area alt="Черновицкая область" title="Черновицкая область" href="http://city.cv.ua/portal/"
+						  target="_blank" shape="poly"
+						  coords="65,160,67,154,67,146,70,142,76,138,82,136,85,127,89,130,93,130,100,136,105,136,112,
+						  132,124,132,125,136,123,142,112,140,109,143,97,148,95,153,83,152,79,156" />
+                    <area alt="Винницкая область" title="Винницкая область" href="http://www.vin.gov.ua/"
+						  target="_blank" shape="poly"
+						  coords="128,139,126,131,126,120,129,114,135,112,137,106,136,100,139,92,143,94,151,93,157,94,
+						  161,92,162,99,167,102,172,99,175,102,173,108,177,114,176,119,183,138,177,143,177,147,173,
+						  151,163,143,160,148,154,150,143,148" />
+                    <area alt="Киевская область" title="Киевская область" href="http://koda.gov.ua/"
+						  target="_blank" shape="poly" coords="180,111,176,107,178,99,175,94,178,91,180,86,180,79,179,
+						  72,176,68,177,63,179,59,176,54,177,45,173,40,176,35,180,32,182,35,188,31,192,36,196,39,193,
+						  47,196,48,200,52,201,59,209,59,212,64,216,67,227,66,230,70,231,75,226,75,227,82,225,86,214,
+						  85,209,91,209,96,207,102,196,101,196,106,184,107" />
+                    <area alt="Черниговская область" title="Черниговская область" href="http://cg.gov.ua/"
+						  target="_blank" shape="poly" coords="199,36,197,30,198,24,201,19,208,12,212,13,216,11,227,10,
+						  229,12,233,11,236,2,243,3,247,5,253,2,259,1,259,6,259,9,257,15,252,19,252,23,254,28,252,32,
+						  252,36,250,46,255,52,251,54,253,60,252,68,244,70,236,68,234,70,225,62,219,63,213,59,207,55,
+						  204,53,200,45" />
+                    <area alt="Сумская область" title="Сумская область" href="https://www.smr.gov.ua/uk/"
+						  target="_blank" shape="poly" coords="256,63,255,56,258,52,256,48,253,45,255,37,256,28,255,20,
+						  259,16,261,12,263,2,269,2,273,8,276,14,282,19,276,23,278,31,280,38,286,40,290,42,296,39,300,
+						  42,301,44,305,44,305,51,308,55,308,60,307,63,308,68,303,69,299,74,289,76,287,71,283,67,279,
+						  60,272,63,266,66" />
+                    <area alt="Черкасская область" title="Черкасская область" href="http://www.rada.cherkasy.ua/ua/"
+						  target="_blank" shape="poly" coords="187,135,184,130,181,124,180,111,187,110,192,110,198,108,
+						  201,105,208,105,213,98,214,90,220,87,226,88,229,83,231,77,236,78,239,86,239,90,247,99,245,
+						  104,248,107,248,112,249,116,246,120,236,115,234,119,230,123,222,118,220,126,210,
+						  127,203,124,196,132" />
+                    <area alt="Полтавская область" title="Полтавская область" href="http://www.adm-pl.gov.ua/"
+						  target="_blank" shape="poly" coords="236,76,238,71,243,75,252,71,256,66,268,69,273,67,279,67,
+						  285,75,285,79,296,79,295,86,303,88,304,94,308,96,306,103,300,105,298,108,294,110,284,117,
+						  283,124,276,122,270,119,265,123,261,120,253,112,251,105,249,102,248,95,244,90,239,79" />
+                    <area alt="Харьковская область" title="Харьковская область" href="http://kharkivoda.gov.ua/"
+						  target="_blank" shape="poly" coords="303,109,309,105,312,96,307,92,305,86,299,84,299,77,306,
+						  73,314,71,318,67,324,67,326,71,332,70,341,64,351,62,356,67,359,74,364,80,365,84,366,88,363,
+						  91,365,103,355,101,356,108,353,114,347,120,339,120,339,126,334,128,331,120,324,112,321,
+						  115,312,115" />
+                    <area alt="Луганская область" title="Луганская область" href="http://www.loga.gov.ua/"
+						  target="_blank" shape="poly" coords="368,105,367,92,369,88,368,81,370,75,376,74,382,75,387,
+						  79,395,80,403,83,407,87,415,86,414,92,417,98,413,106,407,108,415,111,413,115,409,120,413,123,
+						  418,133,414,136,414,147,409,151,400,151,397,143,393,141,392,135,387,136,383,133,379,
+						  125,377,115,373,111" />
+                    <area alt="Кировоградская область" title="Кировоградская область" href="http://www.kr-admin.gov.ua"
+						  target="_blank" shape="poly" coords="253,118,259,121,261,126,268,125,271,131,265,135,264,143,
+						  263,148,260,148,256,153,252,153,248,155,246,159,240,159,236,161,228,156,225,150,219,150,209,
+						  146,192,148,184,148,180,144,186,141,197,138,204,133,215,132,224,126,232,125,239,121,247,123"/>
+                    <area alt="Одесская область" title="Одесская область" href="http://ved.odessa.gov.ua/"
+						  target="_blank" shape="poly" coords="157,156,163,151,169,153,175,154,179,150,187,151,189,159,
+						  192,168,201,169,205,174,204,180,214,186,210,191,211,203,206,208,200,219,191,230,180,237,176,
+						  243,177,252,169,247,157,252,149,254,138,242,145,239,147,231,153,224,158,217,157,208,166,207,
+						  176,208,181,205,181,194,173,192,171,179,165,176,165,164,164,155" />
+                    <area alt="Николаевская область" title="Николаевская область" href="http://www.economy-mk.gov.ua/"
+						  target="_blank" shape="poly" coords="215,204,213,191,217,186,208,179,208,172,203,166,195,166,
+						  191,158,192,152,200,149,209,148,219,152,225,156,229,162,237,164,245,162,253,158,256,165,256,
+						  172,258,181,252,183,255,191,252,195,245,192,240,196,231,202,237,207,226,210,221,210" />
+                    <area alt="Днепропетровская область" title="Днепропетровская область" href="http://www.adm.dp.gov.ua/"
+						  target="_blank" shape="poly" coords="260,167,258,162,257,156,261,151,266,150,267,137,275,131,
+						  271,123,284,126,288,119,295,112,304,112,311,117,324,117,329,121,333,131,341,129,345,131,344,
+						  137,346,141,346,146,340,144,340,154,331,153,328,144,313,143,299,145,297,156,301,168,291,
+						  166,285,171,272,172" />
+                    <area alt="Херсонская область" title="Херсонская область" href="http://www.oda.kherson.ua/"
+						  target="_blank" shape="poly" coords="222,214,237,210,243,206,236,202,247,195,255,198,259,191,
+						  256,184,261,182,259,170,271,174,284,174,287,182,293,184,294,191,299,194,297,200,297,206,305,
+						  208,304,214,299,216,300,223,293,224,282,218,273,215,268,222,255,218,253,223,240,222,229,220"/>
+                    <area alt="Автономная Республика Крым" title="Автономная Республика Крым" href="http://krymology.info"
+						  target="_blank" shape="poly" coords="268,226,275,218,281,222,293,228,301,225,307,232,318,244,
+						  327,243,334,238,346,241,343,248,344,255,329,258,320,253,317,258,312,265,301,266,295,269,291,
+						  276,283,282,271,279,266,274,272,259,267,253,259,252,252,247,247,248,247,241,257,235,
+						  268,230,275,226" />
+                    <area alt="Запорожская область" title="Запорожская область" href="http://www.zoda.gov.ua/"
+						  target="_blank" shape="poly" coords="311,218,308,207,301,203,304,194,297,189,296,181,289,178,
+						  289,173,293,170,304,171,302,160,303,148,313,146,325,147,329,155,340,158,345,163,355,168,349,
+						  174,355,184,355,190,347,191,343,197,333,198,323,200" />
+                    <area alt="Донецкая область" title="Донецкая область" href="http://www.donoda.gov.ua/" target="_blank"
+						  shape="poly" coords="360,189,358,182,353,175,359,168,352,162,344,158,344,149,349,147,349,138,
+						  348,130,343,124,350,122,359,115,360,104,366,107,371,114,375,120,377,131,385,139,395,148,
+						  387,153,381,159,381,181,370,178,363,179" />
+                </map>
+                <!--width can be set here for deploying space on pic while rendering DOM and downloading pic-->
+            </div>
+		</div>
+		<div class="layer map__table-wrapper push-top_2em push-down_2em">
+			<div class="flex-box center padding_top_2em">
+				<div>
+					<h2 class="map__table-h2">Задание №2</h2>
+					<div class="map__table-image origin"></div>
+				</div>
+				<div title="I didn`t look for font-family">
+					<h2 class="map__table-h2">Решение</h2>
+					<table class="map__table-image task2">
+						<thead>
+							<tr>
+								<th>Header</th><th>Header</th><th>Header</th><th>Header</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="5">You can span down.</td><td colspan="3">You can span across.</td>
+							</tr>
+							<tr>
+								<td colspan="2">It`s like a puzzle.</td><td rowspan="4">Over here.</td>
+							</tr>
+							<tr>
+								<td rowspan="3">This way.</td><td>That way.</td>
+							</tr>
+							<tr>
+								<td rowspan="2" class="td-2row">Where am I?</td>
+							</tr>
+						</tbody>
+
+
+					</table>
+				</div>
+			</div>			
+		</div>
+		<div class="layer flex-wrapper">
+			<h2>Элементы flex в медиа-запросах</h2>
+			<div class="flex-task flex-box center">
+				<div class="flex-block__item">
+				<span>Container 1</span>
+				</div>
+				<div class="flex-block__item">
+					<span>Container 2</span>
+				</div>
+				<div class="flex-block__item">
+					<span>Container 3</span>
+				</div>
+				<div class="flex-block__item">
+					<span>Container 4</span>
+				</div>
+				<div class="flex-block__item">
+					<span>Container 5</span>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+</div>
+</body>
+</html>
